@@ -10,6 +10,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/shopall" element={<ShopallPage />} />
+        
       </Routes>
     </BrowserRouter>
   )
