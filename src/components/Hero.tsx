@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -22,10 +21,10 @@ const Hero = () => {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
           <h1 className="text-4xl md:text-8xl font-serif tracking-tighter uppercase mb-2 lg:mb-3">
-            Cosmetics
+            FemmeFable
           </h1>
           <p className="text-xl md:text-5xl font-script italic lowercase tracking-wide drop-shadow-lg">
-            Shop the sale
+            Story of feminine beauty
           </p>
 
           {/* Button */}

@@ -1,7 +1,7 @@
 import { Breadcrumb, BreadcrumbItem } from "../components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { ChevronRight, Heart } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const products = [

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -66,8 +66,7 @@ const Header = () => {
         </div>
 
         <div className="text-center flex-1 order-2">
-          <h1 className="text-2xl font-serif leading-tight">COSMETICS</h1>
-          <p className="text-sm italic -mt-1">By Chloe</p>
+          <h1 className="text-3xl font-script leading-tight italic uppercase font-bold">veloura</h1>
         </div>
 
         <div className="flex gap-4 order-3 w-1/3 justify-end relative">
