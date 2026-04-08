@@ -249,14 +249,14 @@ const ShopallPage = () => {
         <div className="flex-1 grid grid-rows-2 gap-2 h-162">
           <div className="overflow-hidden rounded-sm shadow-md">
             <img
-              src="public\assets\shopall.jpg"
+              src="\assets\shopall.jpg"
               alt="Pink Jewelry"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-sm shadow-md">
             <img
-              src="public\assets\Shopall img1.jpg"
+              src="\assets\Shopall img1.jpg"
               alt="Cosmetic Detail"
               className="w-full h-full object-cover"
             />
