@@ -256,7 +256,7 @@ const ShopallPage = () => {
           </div>
           <div className="overflow-hidden rounded-sm shadow-md">
             <img
-              src="\assets\Shopall img1.jpg"
+              src="\assets\shopall img1.jpg"
               alt="Cosmetic Detail"
               className="w-full h-full object-cover"
             />
