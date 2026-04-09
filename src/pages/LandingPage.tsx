@@ -5,6 +5,7 @@ import About from "../components/About";
 import Footer from "../components/Footer";
 import Collection from "../components/Collection";
 import LetsConnect from "../components/LetsConnect";
+import Testimonial from "@/components/Testimonial";
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage = () => {
       <About />
       <BestSeller />
       <LetsConnect />
+      <Testimonial />
       <Footer />
     </div>
   );

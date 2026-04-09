@@ -66,7 +66,9 @@ const Header = () => {
         </div>
 
         <div className="text-center flex-1 order-2">
-          <h1 className="text-3xl font-script leading-tight italic uppercase font-bold">veloura</h1>
+          <h1 className="text-3xl font-script leading-tight italic uppercase font-bold">
+            veloura
+          </h1>
         </div>
 
         <div className="flex gap-4 order-3 w-1/3 justify-end relative">

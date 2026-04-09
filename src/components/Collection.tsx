@@ -4,26 +4,26 @@ const collections = [
   {
     title: "Makeup Essentials",
     img: "/assets/Makeup Essentials.jpg",
-    path: "/pages/MakeupEssentials.tsx",
+    path: "/MakeupEssentials",
   },
   {
     title: "Hair Accessories",
     img: "/assets/Hair Accessories.jpg",
-    path: "/pages/HairAccessories.tsx",
+    path: "/HairAccessories",
   },
   {
     title: "Blend and Buff",
     img: "/assets/Blend and bluffs.jpg",
-    path: "pages/BlendBuffs.tsx",
+    path: "/BlendBuffs",
   },
   {
     title: "Pretty Little Gems",
     img: "/assets/Pretty Little Gems.jpg",
-    path: "/pages/PrettyGems.tsx",
+    path: "/PrettyGems",
   },
 ];
 
-const CollectionsSection = () => {
+const Collection = () => {
   return (
     <section className="py-20 px-4 bg-pink-100">
       {/* Title */}
@@ -37,7 +37,7 @@ const CollectionsSection = () => {
           {collections.map((item, index) => (
             // Adding Link
             <Link
-              to="{item.path}"
+              to={item.path}
               key={index}
               className="flex flex-col items-center group cursor-pointer"
             >
@@ -64,4 +64,4 @@ const CollectionsSection = () => {
   );
 };
 
-export default CollectionsSection;
+export default Collection;

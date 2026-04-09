@@ -1,4 +1,4 @@
-import { Heart, Terminal } from "lucide-react";
+import { Heart } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel";
 import { useWishlist } from "@/hooks/useWishlist";
-import { Testimnial } from "@/types/review";
+import { toast } from "sonner";
 
 type Product = {
   id: string;
@@ -52,7 +52,18 @@ const products: Product[] = [
 
 const BestSeller = () => {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
-  
+
+  const toggleWishlist = (product: Product) => {
+    const isFavourite = wishlist.some((fav) => fav.id === product.id);
+
+    if (isFavourite) {
+      removeFromWishlist(product);
+      toast.success("Removed from wishlist");
+    } else {
+      addToWishlist(product);
+      toast.success("Added to wishlist");
+    }
+  };
 
   return (
     <section className="bg-pink-200 py-20 px-10 lg:px-15 text-center">
@@ -88,18 +99,14 @@ const BestSeller = () => {
                     </span>
 
                     {/* Wishlist */}
-                    {/* Wishlist */}
-                    <div className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                    <div
+                      className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md"
+                      onClick={() => toggleWishlist(p)}
+                    >
                       {wishlist.some((item) => item.id === p.id) ? (
-                        <Heart
-                          className="cursor-pointer stroke-0 fill-red-500"
-                          onClick={() => removeFromWishlist(p)}
-                        />
+                        <Heart className="w-5 h-5 fill-red-500 stroke-red-500" />
                       ) : (
-                        <Heart
-                          className="cursor-pointer text-gray-500"
-                          onClick={() => addToWishlist(p)}
-                        />
+                        <Heart className="w-5 h-5 text-gray-500" />
                       )}
                     </div>
                   </div>

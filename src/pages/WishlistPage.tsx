@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Breadcrumb, BreadcrumbItem } from "../components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
@@ -12,15 +11,13 @@ type Product = {
   price: string;
 };
 
-const products: Product[] = [
-  { id: "1", img: "/assets/lipstick.jpg", title: "Lipstick", price: "$19.99" },
-  { id: "2", img: "/assets/pallete.jpg", title: "Palette", price: "$19.99" },
-  { id: "3", img: "/assets/gloss.jpg", title: "Gloss", price: "$19.99" },
-  { id: "4", img: "/assets/eyeliner.jpg", title: "Eye Liner", price: "$19.99" },
-];
-
 export default function WishlistPage() {
- const {wishlist, removeFromWishlist} =useWishlist()
+  const { wishlist, removeFromWishlist } = useWishlist();
+
+  const handleRemove = (product: Product) => {
+    removeFromWishlist(product);
+    toast.success(`${product.title} removed from wishlist`);
+  };
 
   return (
     <div className="min-h-screen bg-pink-200 p-10 font-serif">
@@ -53,7 +50,12 @@ export default function WishlistPage() {
 
         {/* Item 3 */}
         <BreadcrumbItem>
-          <Link to="/wishlist" className="text-sm uppercase hover:text-pink-600 transition-all duration-300 tracking-wide">Wishlist</Link>
+          <Link
+            to="/wishlist"
+            className="text-sm uppercase hover:text-pink-600 transition-all duration-300 tracking-wide"
+          >
+            Wishlist
+          </Link>
         </BreadcrumbItem>
       </Breadcrumb>
 
@@ -88,7 +90,7 @@ export default function WishlistPage() {
                 {product.price}
               </p>
               <button
-                onClick={() => removeFromWishlist(wishlist.find((u)=>u.id))}
+                onClick={() => handleRemove(product)}
                 className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
               >
                 Remove from Wishlist
