@@ -1,5 +1,4 @@
-import { Heart } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Heart, Terminal } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel";
-import { toast } from "sonner";
+import { useWishlist } from "@/hooks/useWishlist";
+import { Testimnial } from "@/types/review";
 
 type Product = {
   id: string;
@@ -17,38 +17,42 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: "1", img: "/assets/lipstick.jpg", title: "Lipstick", price: "$19.99 USD" },
-  { id: "2", img: "/assets/pallete.jpg", title: "Palette", price: "$19.99 USD" },
+  {
+    id: "1",
+    img: "/assets/lipstick.jpg",
+    title: "Lipstick",
+    price: "$19.99 USD",
+  },
+  {
+    id: "2",
+    img: "/assets/pallete.jpg",
+    title: "Palette",
+    price: "$19.99 USD",
+  },
   { id: "3", img: "/assets/gloss.jpg", title: "Gloss", price: "$19.99 USD" },
-  { id: "4", img: "/assets/eyeliner.jpg", title: "Eye Liner", price: "$19.99 USD" },
-  { id: "5", img: "/assets/brushe-4.jpg", title: "Makeup Brushes", price: "$19.99" },
-  { id: "6", img: "/assets/Scrunchie-1.jpg", title: "Scrunchie", price: "$19.99" },
+  {
+    id: "4",
+    img: "/assets/eyeliner.jpg",
+    title: "Eye Liner",
+    price: "$19.99 USD",
+  },
+  {
+    id: "5",
+    img: "/assets/brushe-4.jpg",
+    title: "Makeup Brushes",
+    price: "$19.99",
+  },
+  {
+    id: "6",
+    img: "/assets/Scrunchie-1.jpg",
+    title: "Scrunchie",
+    price: "$19.99",
+  },
 ];
 
 const BestSeller = () => {
-  const [wishlist, setWishlist] = useState<string[]>([]);
-
-  useEffect(() => {
-    const storedWishlist = localStorage.getItem("wishlist");
-    if (storedWishlist) {
-      setWishlist(JSON.parse(storedWishlist));
-    }
-  }, []);
-
-  const handleWishlist = (id: string) => {
-    let updatedWishlist: string[];
-
-    if (wishlist.includes(id)) {
-      updatedWishlist = wishlist.filter((item) => item !== id);
-      toast.success("Removed from wishlist");
-    } else {
-      updatedWishlist = [...wishlist, id];
-      toast.success("Added to wishlist");
-    }
-
-    setWishlist(updatedWishlist);
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-  };
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  
 
   return (
     <section className="bg-pink-200 py-20 px-10 lg:px-15 text-center">
@@ -59,9 +63,11 @@ const BestSeller = () => {
 
       {/* Products */}
       <div className="max-w-7xl mx-auto">
-        <Carousel opts={{ align: "start", loop: true }} className="w-full relative">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full relative"
+        >
           <CarouselContent>
-
             {products.map((p) => (
               <CarouselItem
                 key={p.id}
@@ -69,7 +75,6 @@ const BestSeller = () => {
               >
                 {/* Card */}
                 <div className="bg-pink-50 rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-4">
-
                   {/* Image */}
                   <div className="relative overflow-hidden rounded-xl h-72">
                     <img
@@ -83,16 +88,20 @@ const BestSeller = () => {
                     </span>
 
                     {/* Wishlist */}
-                    <button
-                      onClick={() => handleWishlist(p.id)}
-                      className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md hover:bg-pink-100 transition"
-                    >
-                      {wishlist.includes(p.id) ? (
-                        <Heart className="fill-pink-600 stroke-0" />
+                    {/* Wishlist */}
+                    <div className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                      {wishlist.some((item) => item.id === p.id) ? (
+                        <Heart
+                          className="cursor-pointer stroke-0 fill-red-500"
+                          onClick={() => removeFromWishlist(p)}
+                        />
                       ) : (
-                        <Heart className="text-pink-700" />
+                        <Heart
+                          className="cursor-pointer text-gray-500"
+                          onClick={() => addToWishlist(p)}
+                        />
                       )}
-                    </button>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -106,7 +115,6 @@ const BestSeller = () => {
                 </div>
               </CarouselItem>
             ))}
-
           </CarouselContent>
 
           <CarouselPrevious className="absolute -left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-10" />

@@ -4,6 +4,7 @@ import BestSeller from "../components/BestSeller";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import Collection from "../components/Collection";
+import LetsConnect from "../components/LetsConnect";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <Collection />
       <About />
       <BestSeller />
+      <LetsConnect />
       <Footer />
     </div>
   );
