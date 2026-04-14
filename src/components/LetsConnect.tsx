@@ -16,7 +16,7 @@ const images = [
 
 const LetsConnect = () => {
   return (
-    <section className="bg-pink-100 py-20 text-center relative">
+    <section className="bg-pink-100 dark:bg-slate-600 py-20 text-center relative">
       {/* Heading */}
       <div className="mb-20 text-center">
         <h2 className="text-4xl md:text-6xl font-sans mb-4 tracking-wide uppercase flex items-center justify-center gap-3">

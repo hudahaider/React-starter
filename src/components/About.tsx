@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const About = () => {
   return (
     <section
@@ -5,7 +7,7 @@ const About = () => {
       style={{ backgroundImage: "url('/assets/about-model.jpg')" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-pink-950/10"></div>
+      <div className="absolute inset-0 dark:bg-slate-950/50 bg-pink-400/10"></div>
 
       {/* About */}
       <div className="max-w-2xl mx-auto realtive z-10">
@@ -20,9 +22,9 @@ const About = () => {
           Cosmetics by Chloe, your face becomes your canvas, and each
           application becomes a stroke of self-expression.
         </p>
-        <button className="border border-white px-10 py-3 text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+        <Link to="/Contact" className="border border-white px-10 py-3 text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300">
           CONTACT US
-        </button>
+        </Link>
       </div>
     </section>
   );

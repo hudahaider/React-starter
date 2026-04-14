@@ -25,9 +25,9 @@ const collections = [
 
 const Collection = () => {
   return (
-    <section className="py-20 px-4 bg-pink-100">
+    <section className="py-20 px-4 bg-pink-100 dark:bg-slate-950">
       {/* Title */}
-      <h2 className="text-4xl font-serif text-slate-800 mb-15  text-center uppercase tracking-widest">
+      <h2 className="text-4xl font-serif text-slate-800 dark:text-white mb-15  text-center uppercase tracking-widest">
         Our Collections
       </h2>
 
@@ -53,7 +53,7 @@ const Collection = () => {
               </div>
 
               {/* Label */}
-              <h3 className="mt-8 text-sm font-bold text-slate-700 tracking-widest uppercase text-center group-hover:text-pink-600 transition-colors">
+              <h3 className="mt-8 text-sm font-bold text-slate-700 dark:text-white tracking-widest uppercase text-center group-hover:text-pink-600 group-hover:dark:text-pink-600 transition-colors">
                 {item.title}
               </h3>
             </Link>

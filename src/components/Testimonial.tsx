@@ -1,17 +1,18 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "../components/ui/marquee";
 import { reviews } from "@/types/review";
+import { StarRating } from "./start-rating";
 
 const ReviewCard = ({
   img,
   name,
-  username,
-  body,
+  comment,
+  rating,
 }: {
   img: string;
   name: string;
-  username: string;
-  body: string;
+  comment: string;
+  rating?: number;
 }) => {
   return (
     <figure
@@ -27,10 +28,12 @@ const ReviewCard = ({
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-sm">{comment}</blockquote>
+      <blockquote className="mt-2 text-sm">
+        <StarRating rating={Number(rating)} />
+      </blockquote>
     </figure>
   );
 };
@@ -40,28 +43,28 @@ const Testimonial = () => {
   const secondRow = reviews.slice(reviews.length / 2);
 
   return (
-    <div className="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-pink-200 md:shadow-xl py-20">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-pink-200 dark:bg-slate-800 md:shadow-xl py-20">
       {/* Title */}
       <h1 className="font-serif text-4xl text-slate-800 mb-15 uppercase tracking-widest">
         Customer Feedback
       </h1>
       {/* First Row */}
-      <Marquee pauseOnHover className="duration-20">
+      <Marquee pauseOnHover className="duration-20 ">
         {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
 
       {/* Second Row */}
       <Marquee reverse pauseOnHover className="duration-20">
         {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
 
       {/* Edge Gradient Fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 md:w-1/3 bg-linear-to-r from-white "></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 md:w-1/3 bg-linear-to-l from-white "></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 md:w-1/3 bg-linear-to-r from-white dark:from-gray-900 "></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 md:w-1/3 bg-linear-to-l from-white dark:from-gray-900 "></div>
     </div>
   );
 };

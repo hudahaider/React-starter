@@ -8,6 +8,7 @@ import {
 } from "../components/ui/carousel";
 import { useWishlist } from "@/hooks/useWishlist";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 type Product = {
   id: string;
@@ -51,6 +52,8 @@ const products: Product[] = [
 ];
 
 const BestSeller = () => {
+  const navigate = useNavigate();
+
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
 
   const toggleWishlist = (product: Product) => {
@@ -66,9 +69,9 @@ const BestSeller = () => {
   };
 
   return (
-    <section className="bg-pink-200 py-20 px-10 lg:px-15 text-center">
+    <section className="bg-pink-200 dark:bg-slate-950 py-20 px-10 lg:px-15 text-center">
       {/* Title */}
-      <h1 className="font-serif text-4xl text-slate-800 mb-15 uppercase tracking-widest">
+      <h1 className="font-serif text-4xl dark:text-white text-slate-800 mb-15 uppercase tracking-widest">
         Best Sellers
       </h1>
 
@@ -85,7 +88,10 @@ const BestSeller = () => {
                 className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/4 p-3"
               >
                 {/* Card */}
-                <div className="bg-pink-50 rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-4">
+                <div
+                  onClick={() => navigate(`/product/${p.id}`)}
+                  className="bg-pink-50 cursor-pointer dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-4"
+                >
                   {/* Image */}
                   <div className="relative overflow-hidden rounded-xl h-72">
                     <img
@@ -100,23 +106,23 @@ const BestSeller = () => {
 
                     {/* Wishlist */}
                     <div
-                      className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md"
+                      className="absolute top-3 right-3 bg-white dark:bg-slate-800 rounded-full p-2 shadow-md"
                       onClick={() => toggleWishlist(p)}
                     >
                       {wishlist.some((item) => item.id === p.id) ? (
                         <Heart className="w-5 h-5 fill-red-500 stroke-red-500" />
                       ) : (
-                        <Heart className="w-5 h-5 text-gray-500" />
+                        <Heart className="w-5 h-5 text-gray-500 dark:text-white" />
                       )}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h2 className="text-md text-gray-600 italic text-center mt-4">
+                  <h2 className="text-md text-gray-600 dark:text-white italic text-center mt-4">
                     {p.title}
                   </h2>
 
-                  <p className="text-lg font-semibold text-pink-900 text-center mt-1">
+                  <p className="text-lg font-semibold text-pink-900  text-center mt-1">
                     {p.price}
                   </p>
                 </div>

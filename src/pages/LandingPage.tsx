@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Collection from "../components/Collection";
 import LetsConnect from "../components/LetsConnect";
 import Testimonial from "@/components/Testimonial";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <BestSeller />
       <LetsConnect />
       <Testimonial />
+
       <Footer />
     </div>
   );

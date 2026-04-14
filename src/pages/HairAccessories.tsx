@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbItem } from "../components/ui/breadcrumb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronRight, Heart } from "lucide-react";
 import { toast } from "sonner";
 import { Products } from "@/types/product";
@@ -17,6 +17,7 @@ type Product = {
 const HairAccessories = () => {
   // 1. Use the hook instead of local useState to keep wishlist synced
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const navigate = useNavigate()
 
   // 2. FIXED: Renamed variable to 'filteredHairProducts' to avoid conflict with component name 'HairAccessories'
   const filteredHairProducts = Products.filter(
@@ -36,7 +37,7 @@ const HairAccessories = () => {
   };
 
   return (
-    <div className="bg-pink-200 min-h-screen font-sans p-10">
+    <div className="bg-pink-200 dark:bg-slate-950  min-h-screen font-sans p-10">
       {/* Top Breadcrumb */}
       <Breadcrumb className="flex items-center gap-2 py-6 px-10">
         <BreadcrumbItem className="flex items-center gap-2">
@@ -69,12 +70,12 @@ const HairAccessories = () => {
 
       {/* SHOP ALL SECTION */}
       <div id="shop-all" className="max-w-7xl mx-auto mt-16">
-        <h1 className="text-4xl text-[#7D4E5B] text-center font-serif mb-3">
+        <h1 className="text-4xl text-[#7D4E5B] dark:text-white text-center font-serif mb-3">
           Our Collections
         </h1>
-        <div className="h-1 w-24 bg-pink-800 mx-auto mb-20 rounded-full"></div>
+        <div className="h-1 w-24 bg-pink-800 dark:bg-white mx-auto mb-20 rounded-full"></div>
 
-        <h2 className="text-3xl text-pink-800 font-semibold mb-8 text-center">
+        <h2 className="text-3xl text-pink-800 dark:text-white font-semibold mb-8 text-center">
           Hair Accessories
         </h2>
 
@@ -82,8 +83,9 @@ const HairAccessories = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-24">
           {filteredHairProducts.map((p) => (
             <div
+                        onClick={() => navigate(`/product/${p.id}`)}
               key={p.id}
-              className="bg-pink-50 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
+              className="bg-pink-50 dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
             >
               <div className="relative overflow-hidden mb-4 h-72 rounded-xl">
                 <img
@@ -94,18 +96,18 @@ const HairAccessories = () => {
 
                 {/* Wishlist Button */}
                 <div
-                  className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md cursor-pointer hover:bg-pink-100"
+                  className="absolute top-3 right-3 bg-white dark:bg-slate-800 p-2 rounded-full shadow-md cursor-pointer hover:bg-pink-100"
                   onClick={() => toggleWishlist(p as Product)}
                 >
                   {wishlist.some((item) => item.id === p.id) ? (
                     <Heart className="fill-pink-600 text-pink-600" />
                   ) : (
-                    <Heart className="text-pink-700" />
+                    <Heart className="text-pink-700 dark:text-white" />
                   )}
                 </div>
               </div>
 
-              <h3 className="text-md text-gray-600 italic text-center">
+              <h3 className="text-md text-gray-600 dark:text-white italic text-center">
                 {p.title}
               </h3>
 

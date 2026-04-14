@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40 dark:bg-slate-950/50"></div>
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
@@ -33,6 +33,7 @@ const Hero = () => {
               Shop All
             </button>
           </Link>
+                     
         </div>
       </div>
 

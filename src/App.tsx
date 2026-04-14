@@ -6,6 +6,9 @@ import MakeupEssentials from "./pages/MakeupEssentials";
 import BlendBuffs from "./pages/BlendBuffs";
 import HairAccessories from "./pages/HairAccessories";
 import PrettyGems from "./pages/PrettyGems";
+import Contact from "./pages/Contact";
+import NotFound from "./components/NotFound";
+import ProductDetails from "./pages/ProductDetails"
 
 function App() {
   return (
@@ -18,6 +21,12 @@ function App() {
         <Route path="/BlendBuffs" element={<BlendBuffs />} />
         <Route path="/HairAccessories" element={<HairAccessories />} />
         <Route path="/PrettyGems" element={<PrettyGems />} />
+
+        <Route path="/product/:id" element={<ProductDetails />} />
+
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
     </BrowserRouter>
   );

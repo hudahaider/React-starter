@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import Catalog from "./Catalog";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,7 @@ const Header = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-pink-200 px-8 lg:px-18 py-4 flex items-center justify-between relative">
+      <nav className="bg-pink-200 dark:bg-slate-950 px-8 lg:px-18 py-4 flex items-center justify-between relative">
         <button
           className="md:hidden order-1"
           onClick={() => setIsOpen(!isOpen)}
@@ -57,12 +58,10 @@ const Header = () => {
           <Link to="/" className="hover:text-pink-700">
             Home
           </Link>
-          <a href="#" className="hover:text-pink-700">
-            Catalog
-          </a>
-          <a href="#" className="hover:text-pink-700">
+            <Catalog />
+          <Link to="/Contact" className="hover:text-pink-700">
             Contact
-          </a>
+          </Link>
         </div>
 
         <div className="text-center flex-1 order-2">
@@ -87,8 +86,10 @@ const Header = () => {
             <Link to="/" onClick={() => setIsOpen(false)}>
               Home
             </Link>
-            <a href="#">Catalog</a>
-            <a href="#">Contact</a>
+            <Catalog />
+          <Link to="/Contact">
+            Contact
+          </Link>
           </div>
         )}
       </nav>

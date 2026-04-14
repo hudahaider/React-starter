@@ -20,7 +20,7 @@ export default function WishlistPage() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-200 p-10 font-serif">
+    <div className="min-h-screen bg-pink-200 dark:bg-slate-950  p-10 font-serif">
       <Breadcrumb className="flex items-center gap-2 py-6 px-10">
         {/* Item 1*/}
         <BreadcrumbItem className="flex items-center gap-2">
@@ -60,14 +60,14 @@ export default function WishlistPage() {
       </Breadcrumb>
 
       <div className="max-w-7xl mx-auto mt-6 px-10">
-        <h1 className="text-4xl  text-[#7D4E5B] text-center mb-2">
+        <h1 className="text-4xl  text-[#7D4E5B] dark:text-white text-center mb-2">
           My Wishlist
         </h1>
-        <div className="h-1 w-40 bg-pink-900 mx-auto mb-15"></div>
+        <div className="h-1 w-40 bg-pink-900 dark:bg-white mx-auto mb-15"></div>
 
         {/* Products */}
         {wishlist.length === 0 && (
-          <p className="text-center text-lg text-[#A67C86] ">
+          <p className="text-center text-lg text-[#A67C86] dark:text-gray-500">
             Your wishlist is empty 💔
           </p>
         )}
@@ -76,17 +76,17 @@ export default function WishlistPage() {
           {wishlist.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4"
+              className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition p-4"
             >
               <img
                 src={product.img}
                 alt={product.title}
                 className="h-56 w-full object-cover rounded-lg mb-4"
               />
-              <h2 className="text-lg font-medium text-slate-700 italic">
+              <h2 className="text-lg font-medium text-slate-700 dark:text-white italic">
                 {product.title}
               </h2>
-              <p className="text-xl font-semibold text-slate-900 mb-3">
+              <p className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
                 {product.price}
               </p>
               <button
