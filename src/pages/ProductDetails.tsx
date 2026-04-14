@@ -18,7 +18,7 @@ if (loading) {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         
         {/* Image Skeleton */}
-        <div className="bg-gray-200 rounded-2xl h-[400px] w-full"></div>
+        <div className="bg-gray-200 rounded-2xl h-100 w-full"></div>
 
         {/* Text Skeleton */}
         <div className="space-y-6">
@@ -61,7 +61,7 @@ if (loading) {
           <img
             src={product.img}
             alt={product.title}
-            className="w-full h-[400px] object-contain"
+            className="w-full h-100 object-contain"
           />
         </div>
 

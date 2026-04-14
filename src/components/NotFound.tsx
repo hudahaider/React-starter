@@ -46,15 +46,15 @@ const NotFoundPage = () => {
         {/* Right Side Image */}
         <div className="flex justify-center items-center">
           <img 
-            src="public\assets\notfound.jpg" 
+            src="/assets/notfound.jpg" 
             alt="Astronaut lost in space"
-            className="w-54 md:w-60 h-auto object-contain animate-[float_2s_ease-in-out_infinite]"
+            className="w-54 md:w-60 h-auto object-contain animate-bounce [animation-duration:3s]"
           /> 
         </div>
       </div>
 
       {/* Optional: Add this to your tailwind.config.js for the smooth floating effect */}
-      <style italic>{`
+      <style>{`
         @keyframes float {
           0% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
