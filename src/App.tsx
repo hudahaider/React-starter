@@ -8,7 +8,8 @@ import HairAccessories from "./pages/HairAccessories";
 import PrettyGems from "./pages/PrettyGems";
 import Contact from "./pages/Contact";
 import NotFound from "./components/NotFound";
-import ProductDetails from "./pages/ProductDetails"
+import ProductDetails from "./pages/ProductDetails";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
 
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Checkout" element={<CheckoutPage />} />
         <Route path="*" element={<NotFound />} />
-
       </Routes>
     </BrowserRouter>
   );

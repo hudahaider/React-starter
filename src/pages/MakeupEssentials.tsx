@@ -68,7 +68,7 @@ const MakeupEssentials = () => {
       </Breadcrumb>
 
       <div id="shop-all" className="max-w-7xl mx-auto mt-16">
-       <h1 className="text-4xl text-[#7D4E5B] dark:text-white text-center font-serif mb-3">
+        <h1 className="text-4xl text-[#7D4E5B] dark:text-white text-center font-serif mb-3">
           Our Collections
         </h1>
         <div className="h-1 w-24 bg-pink-800 dark:bg-white mx-auto mb-20 rounded-full"></div>
@@ -81,7 +81,7 @@ const MakeupEssentials = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-24">
           {filteredProducts.map((p) => (
             <div
-            onClick={() => navigate(`/product/${p.id}`)}
+              onClick={() => navigate(`/product/${p.id}`)}
               key={p.id}
               className="bg-pink-50 dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
             >

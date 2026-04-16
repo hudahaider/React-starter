@@ -65,7 +65,7 @@ const ShopallPage = () => {
         <BreadcrumbItem>
           <Link
             to="/shopall"
-            className="text-sm uppercase hover:text-pink-600 transition-all duration-300 tracking-wide"
+            className="text-sm uppercase text-pink-600 transition-all duration-300 tracking-wide"
           >
             Shop all
           </Link>
@@ -133,7 +133,7 @@ const ShopallPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-24">
               {section.data.map((p) => (
                 <div
-                onClick={() => navigate(`/product/${p.id}`)}
+                  onClick={() => navigate(`/product/${p.id}`)}
                   key={p.id}
                   className="bg-pink-50 dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
                 >

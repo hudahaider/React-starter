@@ -58,7 +58,7 @@ const Header = () => {
           <Link to="/" className="hover:text-pink-700">
             Home
           </Link>
-            <Catalog />
+          <Catalog />
           <Link to="/Contact" className="hover:text-pink-700">
             Contact
           </Link>
@@ -87,9 +87,7 @@ const Header = () => {
               Home
             </Link>
             <Catalog />
-          <Link to="/Contact">
-            Contact
-          </Link>
+            <Link to="/Contact">Contact</Link>
           </div>
         )}
       </nav>

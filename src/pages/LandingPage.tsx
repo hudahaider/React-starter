@@ -17,7 +17,6 @@ const LandingPage = () => {
       <BestSeller />
       <LetsConnect />
       <Testimonial />
-
       <Footer />
     </div>
   );

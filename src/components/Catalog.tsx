@@ -7,7 +7,6 @@ const Catalog = () => {
 
   return (
     <div className="relative">
-      
       {/* Catalog Button */}
       <button
         onClick={() => setOpen(!open)}
@@ -30,15 +29,12 @@ const Catalog = () => {
             </li>
 
             <li>
-              <Link
-                to="/BlendBuffs"
-                className="hover:text-pink-700 transition"
-              >
+              <Link to="/BlendBuffs" className="hover:text-pink-700 transition">
                 Brush & Bluffs
               </Link>
             </li>
 
-             <li>
+            <li>
               <Link
                 to="/HairAccessories"
                 className="hover:text-pink-700 transition"
@@ -48,10 +44,7 @@ const Catalog = () => {
             </li>
 
             <li>
-              <Link
-                to="/PrettyGems"
-                className="hover:text-pink-700 transition"
-              >
+              <Link to="/PrettyGems" className="hover:text-pink-700 transition">
                 Pretty Little Gems
               </Link>
             </li>

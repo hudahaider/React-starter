@@ -19,7 +19,9 @@ const Footer = () => {
           <p className="italic text-lg text-gray-700 dark:text-white mt-2">
             Beauty & Accessories
           </p>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">All Things Beauty</p>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">
+            All Things Beauty
+          </p>
         </div>
 
         {/* Right Side */}

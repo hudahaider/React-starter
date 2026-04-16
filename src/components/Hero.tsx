@@ -33,7 +33,6 @@ const Hero = () => {
               Shop All
             </button>
           </Link>
-                     
         </div>
       </div>
 

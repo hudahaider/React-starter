@@ -22,7 +22,10 @@ const About = () => {
           Cosmetics by Chloe, your face becomes your canvas, and each
           application becomes a stroke of self-expression.
         </p>
-        <Link to="/Contact" className="border border-white px-10 py-3 text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+        <Link
+          to="/Contact"
+          className="border border-white px-10 py-3 text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+        >
           CONTACT US
         </Link>
       </div>

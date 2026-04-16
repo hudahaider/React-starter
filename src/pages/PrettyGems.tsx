@@ -15,7 +15,7 @@ type Product = {
 };
 
 const PrettyGems = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // 1. Use the unified hook
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
 
@@ -76,10 +76,10 @@ const PrettyGems = () => {
           Pretty Little Gems
         </h2>
 
-        <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-20">
           {filteredGems.map((p) => (
             <div
-            onClick={()=>navigate(`/product/${p.id}`)}
+              onClick={() => navigate(`/product/${p.id}`)}
               key={p.id}
               className="bg-pink-50 cursor-pointer dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
             >

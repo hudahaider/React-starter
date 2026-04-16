@@ -17,7 +17,7 @@ type Product = {
 const HairAccessories = () => {
   // 1. Use the hook instead of local useState to keep wishlist synced
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // 2. FIXED: Renamed variable to 'filteredHairProducts' to avoid conflict with component name 'HairAccessories'
   const filteredHairProducts = Products.filter(
@@ -83,7 +83,7 @@ const HairAccessories = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-24">
           {filteredHairProducts.map((p) => (
             <div
-                        onClick={() => navigate(`/product/${p.id}`)}
+              onClick={() => navigate(`/product/${p.id}`)}
               key={p.id}
               className="bg-pink-50 dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 group p-4"
             >
