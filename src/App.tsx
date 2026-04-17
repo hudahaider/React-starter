@@ -10,11 +10,13 @@ import Contact from "./pages/Contact";
 import NotFound from "./components/NotFound";
 import ProductDetails from "./pages/ProductDetails";
 import CheckoutPage from "./pages/CheckoutPage";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Layout>
+        <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/shopall" element={<ShopallPage />} />
@@ -29,6 +31,7 @@ function App() {
         <Route path="/Checkout" element={<CheckoutPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }
